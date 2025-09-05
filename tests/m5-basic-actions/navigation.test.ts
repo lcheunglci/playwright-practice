@@ -41,3 +41,22 @@ test('Load speed while navigating', async ({ page }) => {
   await page.reload();
   await expect(page).toHaveTitle(savingsTitle);
 });
+
+test('should reset warning when refresh', async ({ page }) => {
+  await page.goto('');
+
+  // click a button
+  await page.getByRole('button', { name: 'Register', exact: true }).click();
+
+  const feedback = page.locator('.invalid-feedback');
+
+  await expect(feedback).toHaveCount(3);
+
+  await page.reload();
+  await expect(page).toHaveTitle(savingsTitle);
+  await expect(feedback).toHaveCount(0);
+
+  // const warning = await page.getByText('Valid last name is required');
+
+  // await expect(warning).toBeVisible();
+});
