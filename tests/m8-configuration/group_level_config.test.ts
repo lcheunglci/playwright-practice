@@ -1,4 +1,4 @@
-import test, { chromium } from '@playwright/test';
+import { test, Page } from '@playwright/test';
 
 test.use({
   // geolocation
@@ -32,7 +32,7 @@ test.describe('Group Title', () => {
   });
 });
 
-async function getTimeZone(page) {
+async function getTimeZone(page: Page) {
   return await page.evaluate(
     () => Intl.DateTimeFormat().resolvedOptions().timeZone,
   );
