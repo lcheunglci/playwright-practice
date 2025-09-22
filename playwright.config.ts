@@ -65,8 +65,25 @@ export default defineConfig({
     },
 
     {
-      name: 'iPad',
-      use: { ...devices['iPad 11 Pro'] },
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 12'] },
+      testDir: './tests/mobile',
+    },
+
+    // by purpose
+    {
+      name: 'Smoke',
+      testMatch: /.*smoke.test.ts/,
+      retries: 0,
+    },
+
+    {
+      name: 'Regular',
+      testIgnore: /.*smoke.test.ts/,
+      retries: 2,
+      use: {
+        // ...
+      },
     },
 
     /* Test against mobile viewports. */
