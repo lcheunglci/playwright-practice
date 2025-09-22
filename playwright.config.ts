@@ -64,6 +64,11 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
 
+    {
+      name: 'iPad',
+      use: { ...devices['iPad 11 Pro'] },
+    },
+
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
