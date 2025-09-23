@@ -93,8 +93,13 @@ export default defineConfig({
     },
 
     {
+      name: 'cleanup',
+      testMatch: '**/global.cleanup.ts',
+    },
+    {
       name: 'setup',
       testMatch: '**/global.setup.ts',
+      teardown: 'cleanup',
     },
     {
       name: 'admin-auth',
