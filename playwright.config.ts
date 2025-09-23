@@ -86,6 +86,25 @@ export default defineConfig({
       },
     },
 
+    {
+      name: 'setup-clean-demo',
+      testMatch: 'global_config.test.ts',
+      dependencies: ['setup', 'admin-auth', 'populate-db'],
+    },
+
+    {
+      name: 'setup',
+      testMatch: '**/global.setup.ts',
+    },
+    {
+      name: 'admin-auth',
+      testMatch: '**/admin-auth.ts',
+    },
+    {
+      name: 'populate-db',
+      testMatch: '**/populate-db.ts',
+    },
+
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
