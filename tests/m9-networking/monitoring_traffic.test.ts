@@ -15,7 +15,7 @@ test('Monitoring HTTP Traffic', async ({ page }) => {
   await page.goto('');
 });
 
-test('Monitoring HTTP Traffic', async ({ page }) => {
+test('Testing HTTP Traffic', async ({ page }) => {
   page.on('response', (response) => {
     expect
       .soft(
